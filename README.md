@@ -16,12 +16,12 @@ Before you begin, ensure you have met the following requirements:
 
 To install **vCard**, follow the steps below based on your operating system:
 
-
-1.: npm install
-2.: npm install react-icons
-3.: npm install lucide-react
-4.: npm install framer-motion
-5.: npm install @emailjs/browser
+<br />
+<p>1.: npm install</p> <br />
+<p>2.: npm install react-icons</p> <br/>
+<p>3.: npm install lucide-react</p> <br/>
+<p>4.: npm install framer-motion</p> <br/>
+<p>5.: npm install @emailjs/browser</p> <br/>
 
 
 ### Linux and macOS:
