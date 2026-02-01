@@ -1,0 +1,135 @@
+.contact-section {
+    background-color: #030c17;
+    min-height: 100vh;
+    padding: 120px 0;
+    position: relative;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 100px;
+}
+
+.contact-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: #fff;
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 20px 0;
+}
+
+.detail-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 180, 0, 0.03);
+    border-left: 2px solid #ffb400;
+    margin-bottom: 15px;
+    color: #cbd5e0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.detail-icon { color: #ffb400; }
+
+.architect-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.field-wrapper {
+    position: relative;
+}
+
+.field-wrapper input, .field-wrapper textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.focus-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ffb400;
+    transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.field-wrapper input:focus ~ .focus-line,
+.field-wrapper textarea:focus ~ .focus-line {
+    width: 100%;
+}
+
+.architect-btn {
+    background: #ffb400;
+    border: none;
+    padding: 20px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 20px;
+}
+
+.status-notification {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #030c17;
+    border: 1px solid #ffb400;
+    color: #ffb400;
+    font-weight: 800;
+    letter-spacing: 3px;
+    box-shadow: 0 0 30px rgba(255, 180, 0, 0.2);
+    z-index: 1000;
+}
+
+.status-notification.error {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffb400;
+    opacity: 0.5;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+@media (max-width: 992px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+    .input-row { grid-template-columns: 1fr; }
+}
