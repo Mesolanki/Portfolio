@@ -38,7 +38,7 @@ const Contact = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <span className="section-label">03 // CONTACT</span>
+                        <span className="section-label">04 // CONTACT</span>
                         <h2 className="contact-title">SYSTEMS<br />INTERFACE</h2>
                         <div className="contact-details">
                             <div className="detail-box">

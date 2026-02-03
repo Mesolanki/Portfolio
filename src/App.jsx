@@ -6,13 +6,14 @@ import Hero_right from './pages/Home/Hero_right';
 import About from './pages/About/About';
 import SkillsSection from './pages/Skills/Skills';
 import Contact from './pages/Contact/Contact';
+import Projects from './pages/Projects/Projects';
 
 const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isTransitioning = useRef(false);
   const touchStart = useRef(null);
-  const pages = ["/", "/about", "/skills" , "/contact"];
+  const pages = ["/", "/about", "/skills", "/projects", "/contact"];
 
   useEffect(() => {
     const handleNavigation = (direction) => {
@@ -82,7 +83,12 @@ const App = () => {
               <SkillsSection />
             </motion.div>
           } />
-        <Route path="/contact" element={
+          <Route path="/projects" element={
+            <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ duration: 0.8 }}>
+              <Projects />
+            </motion.div>
+          } />
+          <Route path="/contact" element={
             <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }} transition={{ duration: 0.8 }}>
               <Contact />
             </motion.div>

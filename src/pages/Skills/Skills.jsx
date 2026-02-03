@@ -1,52 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaAndroid } from 'react-icons/fa';
 import './skills.css';
 
 const skillsData = [
-    { name: 'HTML', level: 95, detail: 'Semantic & SEO-driven structure' },
-    { name: 'CSS', level: 90, detail: 'Advanced layouts, Flexbox & Grid' },
-    { name: 'JavaScript', level: 85, detail: 'ES6+, DOM manipulation & Async' },
-    { name: 'React', level: 90, detail: 'Hooks, State Management & SPAs' },
-    { name: 'JAVA', level: 90, detail: 'OOPs, Logic & Backend Architecture' },
-    { name: 'Android Studio', level: 80, detail: 'Mobile App Lifecycle & UI' }
+    { name: 'HTML', level: 95, icon: <FaHtml5 />, detail: 'Semantic & SEO-driven structure' },
+    { name: 'CSS', level: 90, icon: <FaCss3Alt />, detail: 'Advanced layouts & animations' },
+    { name: 'JavaScript', level: 85, icon: <FaJs />, detail: 'ES6+ & Async Architecture' },
+    { name: 'React', level: 90, icon: <FaReact />, detail: 'State Management & SPAs' },
+    { name: 'JAVA', level: 90, icon: <FaJava />, detail: 'OOPs & Logic Architecture' },
+    { name: 'Android', level: 80, icon: <FaAndroid />, detail: 'Mobile App Lifecycle & UI' }
 ];
 
 const SkillsSection = () => {
     return (
-        <section className="skills-section">
-            <div className="skills-layout">
-                <div className="skills-left">
-                    <div className="brand-label">
-                        <span>EXPERTISE</span>
-                        <div className="dot-line"></div>
-                        <span>TECH STACK</span>
-                    </div>
-                    <h2 className="skills-main-title">CORE <br /> ABILITIES</h2>
+        <section className="skills-viewport">
+            <div className="blueprint-grid"></div>
+            <div className="scanning-line"></div>
+            
+            <div className="skills-container">
+                <div className="skills-header-side">
+                    <motion.div 
+                        className="header-wrapper"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="blueprint-tag">SPECIFICATION _ 04</div>
+                        <h2 className="massive-title">
+                            CORE <span className="outline-text">STACK</span>
+                        </h2>
+                        <div className="architect-measure">
+                            <div className="measure-line"></div>
+                            <span className="measure-value">100% PRECISION</span>
+                        </div>
+                    </motion.div>
                 </div>
-                <div className="skills-right">
-                    <div className="skills-grid">
+
+                <div className="skills-interactive-side">
+                    <div className="skills-orbit-grid">
                         {skillsData.map((skill, index) => (
                             <motion.div
                                 key={index}
-                                className="skill-card"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                                className="skill-blueprint-card"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                whileHover={{ y: -10, transition: { duration: 0.2 } }}
                             >
-                                <div className="card-top">
-                                    <span className="skill-index">0{index + 1}</span>
-                                    <span className="skill-percentage">{skill.level}%</span>
+                                <div className="card-scanner"></div>
+                                <div className="card-header">
+                                    <span className="skill-code">SYS_{index + 1}</span>
+                                    <div className="skill-icon-box">{skill.icon}</div>
                                 </div>
-                                <h3 className="card-title">{skill.name}</h3>
-                                <p className="card-detail">{skill.detail}</p>
-                                <div className="card-progress-bar">
-                                    <motion.div
-                                        className="bar-fill"
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: `${skill.level}%` }}
-                                        transition={{ duration: 1.5, ease: "circOut" }}
-                                    />
+                                
+                                <div className="card-body">
+                                    <h3 className="skill-name">{skill.name}</h3>
+                                    <p className="skill-info">{skill.detail}</p>
+                                </div>
+
+                                <div className="card-footer">
+                                    <div className="progress-label">
+                                        <span>MASTERY</span>
+                                        <span>{skill.level}%</span>
+                                    </div>
+                                    <div className="skill-bar-outer">
+                                        <motion.div 
+                                            className="skill-bar-inner"
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: `${skill.level}%` }}
+                                            transition={{ duration: 2, ease: "easeOut" }}
+                                        />
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
