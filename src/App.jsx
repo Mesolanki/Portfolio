@@ -18,6 +18,10 @@ const App = () => {
   useEffect(() => {
     const handleNavigation = (direction) => {
       if (isTransitioning.current) return;
+      
+      // Disable auto-page-switch on mobile as it interferes with scrolling
+      if (window.innerWidth <= 992) return;
+
       const currentIndex = pages.indexOf(location.pathname);
 
       if (direction === 'next' && currentIndex < pages.length - 1) {
@@ -38,6 +42,7 @@ const App = () => {
     };
 
     const handleTouchStart = (e) => {
+      if (window.innerWidth <= 992) return; // Don't track touch for navigation on mobile
       touchStart.current = e.touches[0].clientY;
     };
 
@@ -64,7 +69,7 @@ const App = () => {
   }, [location.pathname, navigate]);
 
   return (
-    <div style={{ background: "#030c17", width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}>
+    <div className="main-app-container" style={{ background: "#030c17", width: "100%", minHeight: "100vh", position: "relative" }}>
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

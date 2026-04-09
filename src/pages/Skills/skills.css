@@ -1,63 +1,54 @@
 .skills-viewport {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #030c17;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
 }
 
 .blueprint-grid {
     position: absolute;
     inset: 0;
     background-image: 
-        radial-gradient(circle, rgba(255, 180, 0, 0.15) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.3;
-}
-
-@keyframes scan {
-    0% { top: -10%; }
-    100% { top: 110%; }
-}
-
-.scanning-line {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ffb400, transparent);
-    box-shadow: 0 0 15px #ffb400;
-    z-index: 5;
-    animation: scan 8s linear infinite;
-    opacity: 0.2;
+        radial-gradient(circle, rgba(255, 180, 0, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    width: 90%;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1100px;
     z-index: 2;
-    gap: 60px;
+    gap: 50px;
+}
+
+.skills-header-side {
+    text-align: center;
 }
 
 .blueprint-tag {
     color: #ffb400;
     font-size: 0.7rem;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     border: 1px solid rgba(255, 180, 0, 0.3);
-    padding: 5px 15px;
+    padding: 6px 15px;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .massive-title {
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: #fff;
     font-weight: 900;
-    line-height: 0.9;
+    text-transform: uppercase;
+    line-height: 1.1;
 }
 
 .outline-text {
@@ -65,111 +56,64 @@
     color: transparent;
 }
 
-.architect-measure {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.measure-line {
-    width: 100px;
-    height: 1px;
-    background: #ffb400;
-    position: relative;
-}
-
-.measure-line::before, .measure-line::after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 10px;
-    background: #ffb400;
-    top: -5px;
-}
-
-.measure-line::after { right: 0; }
-
-.measure-value {
-    color: #a0aec0;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-}
-
 .skills-orbit-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .skill-blueprint-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 180, 0, 0.1);
-    padding: 25px;
+    padding: 20px;
     position: relative;
-    overflow: hidden;
+    transition: 0.3s;
 }
 
-.card-scanner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(255, 180, 0, 0.05), transparent);
-    transform: translateY(-100%);
-    transition: 0.5s;
-}
-
-.skill-blueprint-card:hover .card-scanner {
-    transform: translateY(100%);
+.skill-blueprint-card:hover {
+    border-color: rgba(255, 180, 0, 0.4);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .skill-code {
     font-family: monospace;
     color: #ffb400;
-    font-size: 0.8rem;
+    font-size: 0.65rem;
+    opacity: 0.7;
 }
 
 .skill-icon-box {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #fff;
-    opacity: 0.5;
-    transition: 0.3s;
-}
-
-.skill-blueprint-card:hover .skill-icon-box {
-    color: #ffb400;
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 0.6;
 }
 
 .skill-name {
     color: #fff;
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .skill-info {
     color: #718096;
-    font-size: 0.85rem;
-    margin-bottom: 25px;
-    line-height: 1.5;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
 }
 
 .progress-label {
     display: flex;
     justify-content: space-between;
     color: #fff;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: 1px;
@@ -177,19 +121,35 @@
 
 .skill-bar-outer {
     height: 2px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     width: 100%;
 }
 
 .skill-bar-inner {
     height: 100%;
     background: #ffb400;
-    box-shadow: 0 0 10px rgba(255, 180, 0, 0.5);
 }
 
-@media (max-width: 1024px) {
-    .skills-container { grid-template-columns: 1fr; gap: 40px; }
-    .massive-title { font-size: 4rem; }
-    .skills-orbit-grid { grid-template-columns: 1fr; }
-    .skills-viewport { height: auto; padding: 100px 0; overflow-y: auto; }
+@media (max-width: 992px) {
+    .skills-viewport { height: auto; padding: 100px 20px; }
+}
+
+@media (max-width: 768px) {
+    .massive-title { font-size: 2.22rem; }
+    .skills-orbit-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .massive-title { font-size: 1.8rem; }
+    .skills-orbit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+    .massive-title { font-size: 1.5rem; }
+    .blueprint-tag { font-size: 0.6rem; letter-spacing: 2px; }
+    .skill-blueprint-card { padding: 15px; }
 }

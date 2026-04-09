@@ -12,7 +12,7 @@
 .blueprint-overlay {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 180, 0, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 180, 0, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -29,6 +29,7 @@
     letter-spacing: 8px;
     font-size: 0.7rem;
     white-space: nowrap;
+    opacity: 0.5;
 }
 
 .project-bg-text {
@@ -38,9 +39,10 @@
     transform: translate(-50%, -50%);
     font-size: 40vw;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.012);
     z-index: 0;
     line-height: 1;
+    pointer-events: none;
     user-select: none;
 }
 
@@ -48,9 +50,9 @@
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 80px;
-    max-width: 1400px;
+    max-width: 1300px;
     width: 90%;
     align-items: center;
 }
@@ -60,19 +62,29 @@
     height: 60vh;
     background: #000;
     overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .main-image-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.8;
+    transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-display:hover .main-image-frame img {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .accent-border {
     position: absolute;
-    inset: 20px;
-    border: 1px solid rgba(255, 180, 0, 0.3);
+    inset: 15px;
+    border: 1px solid rgba(255, 180, 0, 0.15);
     pointer-events: none;
+    z-index: 2;
 }
 
 .project-number {
@@ -80,21 +92,24 @@
     font-weight: 900;
     letter-spacing: 5px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 .display-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     color: #fff;
     font-weight: 900;
-    margin-bottom: 20px;
-    line-height: 1.1;
+    margin-bottom: 25px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .display-desc {
     color: #a0aec0;
-    font-size: 1.1rem;
-    max-width: 500px;
+    font-size: 1.05rem;
+    max-width: 450px;
     line-height: 1.8;
     margin-bottom: 40px;
 }
@@ -102,61 +117,76 @@
 .display-actions {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 .nav-icon-btn {
-    color: #ffb400;
-    font-size: 1.5rem;
+    color: #fff;
+    font-size: 1.4rem;
     transition: 0.3s;
+    background: rgba(255, 180, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .nav-icon-btn:hover {
-    color: #fff;
+    color: #030c17;
+    background: #ffb400;
     transform: translateY(-5px);
 }
 
 .cat-tag {
     border-left: 2px solid #ffb400;
     padding-left: 15px;
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    color: #ffb400;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .slider-controls {
     position: absolute;
     bottom: 60px;
-    right: 100px;
+    right: 5%;
     display: flex;
     align-items: center;
     gap: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px 30px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .ctrl-btn {
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
     color: #fff;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
 }
 
 .ctrl-btn:hover {
-    background: #ffb400;
-    border-color: #ffb400;
-    color: #030c17;
+    color: #ffb400;
+    transform: scale(1.2);
 }
 
 .progress-bar {
-    width: 200px;
+    width: 150px;
     height: 2px;
     background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
 }
 
 .progress-fill {
@@ -166,22 +196,83 @@
 }
 
 @media (max-width: 992px) {
+    .projects-fullscreen { 
+        height: auto; 
+        min-height: 100vh; 
+        padding: 100px 0; 
+        display: block; 
+        overflow-y: auto;
+    }
+    
+    .project-display {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .project-grid-main {
         grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .project-visual-side {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .main-image-frame { 
+        height: 350px; 
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project-info-side { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0 20px; 
+        width: 100%;
+    }
+
+    .display-desc { 
+        margin: 0 auto 35px; 
         text-align: center;
     }
-    .main-image-frame {
-        height: 35vh;
+
+    .display-actions { 
+        justify-content: center; 
+        width: 100%;
     }
-    .display-desc {
-        margin: 0 auto 30px;
+
+    .slider-controls { 
+        position: relative; 
+        bottom: 0; 
+        right: 0; 
+        margin: 40px auto 30px; 
+        left: unset;
+        width: fit-content; 
     }
-    .display-actions {
-        justify-content: center;
-    }
-    .slider-controls {
-        right: 50%;
-        transform: translateX(50%);
-        bottom: 30px;
-    }
+    
+    .vertical-label { display: none; }
+}
+
+@media (max-width: 576px) {
+    .display-title { font-size: 2.22rem; }
+    .main-image-frame { height: 280px; }
+    .progress-bar { width: 100px; }
+    .project-bg-text { font-size: 60vw; opacity: 0.008; }
+    .display-actions { gap: 15px; }
+}
+
+@media (max-width: 380px) {
+    .display-title { font-size: 1.8rem; }
+    .display-desc { font-size: 0.95rem; }
+    .main-image-frame { height: 220px; }
+    .slider-controls { padding: 8px 20px; gap: 15px; }
+    .cat-tag { font-size: 0.6rem; letter-spacing: 2px; }
 }

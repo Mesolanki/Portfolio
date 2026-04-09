@@ -92,8 +92,8 @@ const Projects = () => {
                             </motion.p>
 
                             <div className="display-actions">
-                                <a href="#" className="nav-icon-btn"><FaGithub /></a>
-                                <a href="#" className="nav-icon-btn"><FaExternalLinkAlt /></a>
+                                <a href="https://github.com/Mesolanki?tab=repositories" className="nav-icon-btn"><FaGithub /></a>
+                                <a href="https://github.com/Mesolanki?tab=repositories" className="nav-icon-btn"><FaExternalLinkAlt /></a>
                                 <span className="cat-tag">{projects[activeIndex].category}</span>
                             </div>
                         </div>

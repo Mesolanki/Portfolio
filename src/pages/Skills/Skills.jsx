@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaAndroid } from 'react-icons/fa';
+import { 
+    FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaAndroid, 
+    FaBootstrap, FaPython 
+} from 'react-icons/fa';
+import { SiCplusplus, SiSharp, SiTailwindcss, SiMongodb } from 'react-icons/si';
+import { MdDevices } from 'react-icons/md';
 import './skills.css';
 
 const skillsData = [
@@ -9,7 +14,13 @@ const skillsData = [
     { name: 'JavaScript', level: 85, icon: <FaJs />, detail: 'ES6+ & Async Architecture' },
     { name: 'React', level: 90, icon: <FaReact />, detail: 'State Management & SPAs' },
     { name: 'JAVA', level: 90, icon: <FaJava />, detail: 'OOPs & Logic Architecture' },
-    { name: 'Android', level: 80, icon: <FaAndroid />, detail: 'Mobile App Lifecycle & UI' }
+    { name: 'Android', level: 80, icon: <FaAndroid />, detail: 'Mobile App Lifecycle & UI' },
+    { name: 'Bootstrap', level: 85, icon: <FaBootstrap />, detail: 'Responsive Component Design' },
+    { name: 'C / C++', level: 80, icon: <SiCplusplus />, detail: 'Memory Management & DSA' },
+    { name: 'C#', level: 70, icon: <SiSharp />, detail: 'Desktop & Game Development' },
+    { name: 'MongoDB', level: 75, icon: <SiMongodb />, detail: 'NoSQL Schema Design' },
+    { name: 'Tailwind CSS', level: 80, icon: <SiTailwindcss />, detail: 'Utility-First Styling' },
+    { name: 'Python', level: 80, icon: <FaPython />, detail: 'Data Analysis & Automation' },
 ];
 
 const SkillsSection = () => {
@@ -43,10 +54,10 @@ const SkillsSection = () => {
                             <motion.div
                                 key={index}
                                 className="skill-blueprint-card"
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
+                                whileHover={{ y: -5, transition: { duration: 0.2 } }}
                             >
                                 <div className="card-scanner"></div>
                                 <div className="card-header">
@@ -69,7 +80,7 @@ const SkillsSection = () => {
                                             className="skill-bar-inner"
                                             initial={{ width: 0 }}
                                             whileInView={{ width: `${skill.level}%` }}
-                                            transition={{ duration: 2, ease: "easeOut" }}
+                                            transition={{ duration: 1.5, ease: "easeOut" }}
                                         />
                                     </div>
                                 </div>

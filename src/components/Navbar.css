@@ -80,5 +80,15 @@
 }
 
 @media (max-width: 768px) {
-    .nav-container { padding: 0 20px; }
+    .nav-container { padding: 0 25px; }
 }
+
+@media (max-width: 480px) {
+    .nav-container { height: 60px; padding: 0 15px; }
+    .logo img { height: 35px; }
+    .nav-link-large { font-size: 2.2rem; gap: 10px; }
+}
+
+@media (max-width: 380px) {
+    .nav-link-large { font-size: 1.8rem; }
+}
