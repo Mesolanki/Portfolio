@@ -1,44 +1,80 @@
-# vCard - Personal Portfolio
+# Mihir Solanki | Professional Portfolio
 
-A sleek, professional personal portfolio template to showcase your work and skills.
+A premium, modern, and high-performance personal portfolio designed to showcase software engineering skills, projects, and professional experience. Built with a focus on sleek aesthetics, smooth animations, and a mobile-first responsive design.
 
----
-
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/) must be installed on your operating system.
+![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
+![Tech Stack](https://img.shields.io/badge/Built%20With-React%20%2B%20Vite-blue?style=for-the-badge&logo=react)
 
 ---
 
-## Installing vCard
+## 🚀 Live Demo
+Check out the live version here: [mihirsolanki.com](https://mihirsolanki.com)
 
-To install **vCard**, follow the steps below based on your operating system:
+---
 
-<br />
-<p>1.: npm install</p> <br />
-<p>2.: npm install react-icons</p> <br/>
-<p>3.: npm install lucide-react</p> <br/>
-<p>4.: npm install framer-motion</p> <br/>
-<p>5.: npm install @emailjs/browser</p> <br/>
+## ✨ Features
 
+- **Premium Design**: Dark-themed UI with glassmorphism effects and customized color palettes.
+- **Dynamic Animations**: Smooth transitions and interactive elements powered by **Framer Motion**.
+- **Fully Responsive**: Optimized for all screen sizes, from mobile devices to large desktops.
+- **Interactive Projects**: Showcase of key work with detailed descriptions and tech snippets.
+- **Contact Integration**: Seamless email functionality using **EmailJS**.
+- **Modern Tech Stack**: Leveraging the speed of **Vite** and the flexibility of **React**.
 
-### Linux and macOS:
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: [React.js](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (Custom System) & [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Email Service**: [EmailJS](https://www.emailjs.com/)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
+
+---
+
+## ⚙️ Installation & Setup
+
+Locally clone the repository and set up the environment:
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Mesolanki/Portfolio.git
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📦 Deployment
+
+The project is configured for easy deployment to **GitHub Pages**:
 
 ```bash
-sudo git clone [https://github.com/codewithsadee/vcard-personal-portfolio.git](https://github.com/codewithsadee/vcard-personal-portfolio.git)
+npm run deploy
+```
 
-### Key Improvements Made:
-* **Hierarchical Headings:** Used `#` for the main title and `##` for sections to create a clear Table of Contents (GitHub does this automatically for these tags).
-* **Code Blocks:** Wrapped the commands in triple backticks (`` ``` ``) with language identifiers (`bash`, `powershell`) for syntax highlighting and easy copying.
-* **Horizontal Rules:** Added `---` to create visual separation between sections for better scannability.
-* **Link Integration:** Added a link to the official Git website in the Prerequisites section to help users who don't have it yet.
+*Note: Ensure the `homepage` field in `package.json` and the `CNAME` file are correctly configured for your custom domain.*
 
+---
 
+## 🤝 Contact
 
+Mihir Solanki - [LinkedIn](https://www.linkedin.com/in/mihir-solanki/) | [GitHub](https://github.com/Mesolanki)
 
-
-
-
-Would you like me to add a **"Features"** or **"Technologies Used"** section to make the README more descriptive?
+Project Link: [https://github.com/Mesolanki/Portfolio](https://github.com/Mesolanki/Portfolio)
