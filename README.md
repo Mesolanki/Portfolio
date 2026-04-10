@@ -8,7 +8,7 @@ A premium, modern, and high-performance personal portfolio designed to showcase 
 ---
 
 ## 🚀 Live Demo
-Check out the live version here: [mihirsolanki.com](https://mihirsolanki.com)
+Check out the live version here: [mihirsolanki.com](https://mesolanki.github.io/Portfolio/)
 
 ---
 
